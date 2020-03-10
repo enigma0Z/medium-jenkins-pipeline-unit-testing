@@ -1,0 +1,19 @@
+# IDEs
+.idea
+.vscode
+
+# Gradle outputs
+.gradle
+/build
+
+# VSCode's java / gradle support generates these
+/bin/main
+/bin/test
+.classpath
+.project
+.settings
+
+# Exclude gradle wrapper to keep the repo small
+gradle
+gradlew
+gradlew.bat
