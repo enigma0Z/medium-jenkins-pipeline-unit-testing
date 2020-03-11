@@ -102,31 +102,36 @@ gradle wrapper --gradle-version 6.2.2
 
 ### The test harness (`jenkins-pipeline-unit`)
 
+This library was initially written by LesFurets and has since been brought into
+the official Jenkins github account.  You can find the source code here:
+https://github.com/jenkinsci/JenkinsPipelineUnit
+
 This is where most of the magic happens.  This is a suite of classes that work
 together to enable you to "run" Jenkins pipelines without running them.  This
 will test the groovy code, but, for instance, it won't actually execute shell
-commands.  All of these calls are mock-able.  Once the pipeline has run, some
-data values are available that allow you to inspect the decision logic and
-results from a call stack view, and thus test this data to ensure that your
-pipeline is doing what you expect.
-
-
-
-<!--
-Source code to view / examples
-Gradle setup
-Dependency overview
-Groovy concepts used
-LesFurets
--->
+commands.  All of these calls are mock-able, and many mocks come out-of-the-box
+with the test harness.  Once the pipeline has run, data values are available
+that allow you to inspect the decision logic and results from a call stack view,
+and thus test this data to ensure that your pipeline is doing what you expect.
 
 ## Basic tests
 
-<!--
-Run a pipeline
-Inspect the call stack
-Mock variables & function calls
--->
+### The pipeline
+
+```groovy
+node('some-node') {
+  stage('do a thing') {
+    sh(label: 'run a command', script: 'command arg_one arg_2')
+  }
+}
+```
+
+### The unit test
+
+```groovy
+```
+
+### What it's doing
 
 ## Advanced call stack inspection
 
